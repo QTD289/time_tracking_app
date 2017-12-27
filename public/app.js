@@ -26,6 +26,10 @@ class TimersDashboard extends React.Component {
     this.updateTimer(attrs);
   };
 
+  handleDeleteClick = (timerId) => {
+    this.deleteTimer(timerId);
+  };
+
   createTimer = (timer) => {
     const t = helpers.newTimer(timer);
     this.setState({
@@ -48,6 +52,12 @@ class TimersDashboard extends React.Component {
     });
   };
 
+  deleteTimer = (timerId) => {
+    this.setState({
+      timers: this.state.timers.filter(t => t.id !== timerId),
+    });
+  };
+
   render() {
     return (
       <div className='ui three column centered grid'>
@@ -55,6 +65,7 @@ class TimersDashboard extends React.Component {
           <EditableTimerList
             timers={this.state.timers}
             onFormSubmit={this.handleEditFormSubmit}
+            onDeleteClick={this.handleDeleteClick}
           />
           <ToggleableTimerForm
             onFormSubmit={this.handleCreateFormSubmit}
@@ -76,6 +87,7 @@ class EditableTimerList extends React.Component {
         elapsed={timer.elapsed}
         runningSince={timer.runningSince}
         onFormSubmit={this.props.onFormSubmit}
+        onDeleteClick={this.props.onDeleteClick}
       />
     ));
     return (
@@ -132,6 +144,7 @@ class EditableTimer extends React.Component {
           elapsed={this.props.elapsed}
           runningSince={this.props.runningSince}
           onEditClick={this.handleEditClick}
+          onDeleteClick={this.props.onDeleteClick}
         />
       );
     }
@@ -245,6 +258,10 @@ class ToggleableTimerForm extends React.Component {
 }
 
 class Timer extends React.Component {
+  handleDeleteClick = () => {
+    this.props.onDeleteClick(this.props.id);
+  };
+
   render() {
     const elapsedString = helpers.renderElapsedString(this.props.elapsed);
     return (
@@ -268,7 +285,10 @@ class Timer extends React.Component {
             >
               <i className='edit icon'></i>
             </span>
-            <span className='right floated trash icon'>
+            <span
+              className='right floated trash icon'
+              onClick={this.handleDeleteClick}
+            >
               <i className='trash icon'></i>
             </span>
           </div>
