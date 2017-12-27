@@ -10,37 +10,20 @@
         "ecmaVersion": 6,
         "sourceType": "module",
         "ecmaFeatures": {
-            "arrowFunctions": true,
-            "binaryLiterals": true,
-            "blockBindings": true,
-            "classes": true,
-            "defaultParams": true,
-            "destructuring": true,
-            "forOf": true,
-            "generators": true,
-            "modules": true,
-            "objectLiteralComputedProperties": true,
-            "objectLiteralDuplicateProperties": true,
-            "objectLiteralShorthandMethods": true,
-            "objectLiteralShorthandProperties": true,
-            "octalLiterals": true,
-            "regexUFlag": true,
-            "regexYFlag": true,
-            "spread": true,
-            "superInFunctions": true,
-            "templateStrings": true,
-            "unicodeCodePointEscapes": true,
-            "globalReturn": true,
-            "jsx": true,
-            "experimentalObjectRestSpread": true
+            "jsx": true
         }
     },
+    "plugins": [
+        "react"
+    ],
     "rules": {
         "no-const-assign": "warn",
         "no-this-before-super": "warn",
         "no-unreachable": "warn",
         "no-unused-vars": "warn",
         "constructor-super": "warn",
-        "valid-typeof": "warn"
+        "valid-typeof": "warn",
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error"
     }
 }
