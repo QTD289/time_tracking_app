@@ -3,21 +3,14 @@
         "title": "feels great",
         "project": "Project",
         "id": "6735aad1-5f0e-476c-9298-04299f9df306",
-        "elapsed": 1002672,
+        "elapsed": 1008989,
         "runningSince": null
     },
     {
         "title": "Timer",
         "project": "Project",
-        "id": "7c0d2e17-f8a0-42c6-a8c3-3f20ef12853b",
-        "elapsed": 0,
-        "runningSince": null
-    },
-    {
-        "title": "d",
-        "project": "d",
-        "id": "0d6bb561-6174-4eee-b4b3-9b8e880d66be",
-        "elapsed": 0,
+        "id": "5f12b7ed-ac2a-4411-9ce0-fe5581421ea9",
+        "elapsed": 32128,
         "runningSince": null
     }
 ]
